@@ -5,9 +5,10 @@ Effortless JavaScript form validation and error handling
 
 ### Usage
 
-Include the script in your HTML
+Include the required scripts in your HTML
 
 ```html
+<script type="text/javascript" src="validator.min.js"></script>
 <script type="text/javascript" src="validity.min.js"></script>
 ```
 
@@ -72,3 +73,12 @@ function login () {
   }
 }
 ```
+
+#### Using Custom Error-handling Functions
+
+The default error-handling function used by `validate` and `displayServerErrors` is called ` two things:
+
+1. Adds a "has-error" class to the parent of the input (assumed to be a "form-group" or similar container for the input and its associated elements)
+2. Sets the text of the first label in the form-group to the error message
+
+This is designed to work seamlessly with forms built using Twitter Bootstrap.
