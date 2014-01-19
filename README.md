@@ -13,7 +13,7 @@ Include the script in your HTML
 
 #### Client-Side Validation
 
-Simply add a `data-validation` attribute to each input field you would like validated, with a JSON-string representing a dictionary of the validation type, follwowed by the error message you would like to appear on that input if this validation fails:
+Simply add a `data-validation` attribute to each input field you would like validated. Set each attribute to a JSON-string dictionary, with each key being the validation type you would like performed on the input and the value being the error message you would like to appear on that input if its corresponding validation fails:
 
 ```html
 <form>
