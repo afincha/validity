@@ -22,3 +22,9 @@ Simply add a `data-validation` attribute to each input field you would like vali
   <input type='submit' value='Submit' />
 </form>
 ```
+
+Validity supports the following validation types:
+
+- **required** - ensure the field is not empty.
+- **isEmail** - ensure the field is a valid email address.
+- **isURL** - ensure the field is a valid URL.
