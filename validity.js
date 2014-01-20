@@ -98,6 +98,33 @@ Validity.processValidation = function (type, element) {
     case 'isNumeric':
       isValid = validator.isNumeric(element.value);
       break;
+    case 'isAlphanumeric':
+      isValid = validator.isAlphanumeric(element.value);
+      break;
+    case 'isHexadecimal':
+      isValid = validator.isHexadecimal(element.value);
+      break;
+    case 'isHexColor':
+      isValid = validator.isHexColor(element.value);
+      break;
+    case 'isLowercase':
+      isValid = validator.isLowercase(element.value);
+      break;
+    case 'isUppercase':
+      isValid = validator.isUppercase(element.value);
+      break;
+    case 'isInt':
+      isValid = validator.isInt(element.value);
+      break;
+    case 'isFloat':
+      isValid = validator.isFloat(element.value);
+      break;
+    case 'isDate':
+      isValid = validator.isDate(element.value);
+      break;
+    case 'isCreditCard':
+      isValid = validator.isCreditCard(element.value);
+      break;
     default:
       isValid = false;
       console.error('Error: Unrecognized validation type: ' + type + ' on element: ' + element);

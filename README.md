@@ -24,13 +24,7 @@ Simply add a `data-validation` attribute to each input field you would like vali
 </form>
 ```
 
-Validity currently supports the following validation types:
-
-- **required** - ensure the field is not empty.
-- **isEmail** - ensure the field is a valid email address.
-- **isURL** - ensure the field is a valid URL.
-
-Use JavaScript to validate the form before submission. Validation is performed by calling Validity's `validate` function and passing in the id of the form you would like to validate. This function returns `true` if all validations pass and `false` if any of them fail:
+Then use JavaScript to validate the form before submission. Validation is performed by calling Validity's `validate` function and passing in the id of the form you would like to validate. This function returns `true` if all validations pass and `false` if any of them fail:
 
 ```javascript
 function login () {
@@ -41,6 +35,24 @@ function login () {
   }
 }
 ```
+
+Validity currently supports the following validation types:
+
+- **required** - ensure the field is not empty
+- **isEmail** - ensure the field contains a valid email address
+- **isURL** - ensure the field contains a valid URL
+- **isIP** - ensure the field contains a valid IP address
+- **isAlpha** - ensure the field contains only letters (a-zA-Z)
+- **isNumeric** - ensure the field contains only numbers
+- **isAlphanumeric** - ensure the field contains only letters and numbers
+- **isHexadecimal** - ensure the field contains a hexadecimal number
+- **isHexColor** - ensure the field contains a hexadecimal color
+- **isLowercase** - ensure the field does not contain any uppercase letters
+- **isUppercase** - ensure the field does not contain any lowercase letters
+- **isInt** - ensure the field contains an integer
+- **isFloat** - ensure the field contains a float
+- **isDate** - ensure the field contains a date
+- **isCreditCard** - ensure the field contains a credit card number
 
 #### Validity helps display errors reported by ther server too
 
@@ -118,3 +130,28 @@ function login () {
   }
 }
 ```
+
+### Tests
+
+I don't have a test suite yet. Help me make one!
+
+### License (MIT)
+
+Copyright (c) 2014 Andrew Finch
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
