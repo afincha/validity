@@ -3,7 +3,7 @@ Validity
 
 Effortless JavaScript form validation and error handling
 
-### Usage
+### Basic Usage
 
 Include the required scripts in your HTML
 
@@ -74,11 +74,47 @@ function login () {
 }
 ```
 
-#### Using Custom Error-handling Functions
+### Using Custom Error-handling Functions
 
 The default error-handling function used by `validate` and `displayServerErrors` is called ` two things:
 
 1. Adds a "has-error" class to the parent of the input (assumed to be a "form-group" or similar container for the input and its associated elements)
 2. Sets the text of the first label in the form-group to the error message
 
-This is designed to work seamlessly with forms built using Twitter Bootstrap.
+This is designed to work seamlessly with forms built using Twitter Bootstrap. If you would like to use a custom error-handling function, it is very easy to do so. Let's say that instead of using the default error-handler, we would like to add the "has-error" class to the input element itself, and make the error message appear in the input's placeholder. Let's define a function that does this:
+
+```javascript
+function customSetError (element, message) {
+  element.classList.add('has-error');
+  element.setAttribute('placeholder', message);
+}
+```
+
+Let's define a function that will clear this error state as well:
+
+```javascript
+function customClearError (element) {
+  element.classList.remove('has-error');
+  element.setAttribute('placeholder', '');
+}
+```
+
+Now we can use these by passing them into `validateWithCustomFunctions` and `displayServerErrorsWithCustomFunctions`:
+
+```javascript
+function login () {
+  if (Validity.validateWithCustomFunctions('loginForm', customSetError, customClearError)) {
+    $.post('/login', $('#loginForm').serialize()).then(function (response) {
+      if (response.success) {
+         // We successfully logged in
+         window.location.href = '/loggedin';
+      } else {
+        // Login failed
+        Validity.displayServerErrors('loginForm', [response.error.code.toString()], customSetError, customClearError);
+      }
+    });
+  } else {
+    console.error("There are errors on the form");
+  }
+}
+```

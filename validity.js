@@ -111,8 +111,6 @@ Validity.processValidation = function (type, element) {
 Validity.setErrorState = function (element, message) {
   console.error("Error on element: " + element + " with message: " + message);
 
-  //element.value = "";
-
   var parent = element.parentNode;
   parent.classList.add('has-error');
 
