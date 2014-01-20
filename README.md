@@ -29,9 +29,9 @@ Then use JavaScript to validate the form before submission. Validation is perfor
 ```javascript
 function login () {
   if (Validity.validate('loginForm')) {
-    // post the form data
+    // Send form data to the server
   } else {
-    console.error("There are errors on the form");
+    console.error("Errors on the form");
   }
 }
 ```
@@ -81,7 +81,7 @@ function login () {
       }
     });
   } else {
-    console.error("There are errors on the form");
+    console.error("Errors on the form");
   }
 }
 ```
