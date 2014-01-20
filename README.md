@@ -3,8 +3,6 @@ Validity
 
 Validity enables effortless JavaScript form validation and error handling. It is built on top of [chriso](https://github.com/chriso)'s [validator.js](https://github.com/chriso/validator.js). Big shout-out to chriso for writing this awesome library!
 
-**Note:** This library only works for forms that are submitted using JavaScript.
-
 ### Basic Usage
 
 Include **validitor** and **validity** in your HTML. The easiest way is with the combined, compiled version that we offer:
@@ -139,8 +137,9 @@ function login () {
 
 ### Gotchas
 
-Right now, only form members of tag type `<input>` can be validated. 
+* Right now, only form members of tag type `<input>` can be validated. 
 I plan to add support for other tags, such as `<select>` soon.
+* This library only works for forms that are submitted using JavaScript.
 
 ### Tests
 
