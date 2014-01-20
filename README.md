@@ -36,7 +36,7 @@ function login () {
 }
 ```
 
-By default, each error on the form triggers a call to `setErrorState`, which adds the CSS class "has-error" to the parent of the field and changes its label text to the error message. This function is desctibed in more detail in [Using Custom Error-handling Functions]
+By default, each error on the form triggers a call to `setErrorState`, which adds the class "has-error" to the parent of the field and changes its label text to the error message. This function is desctibed in more detail in [Using Custom Error-handling Functions]
 
 Validity currently supports the following client-side validation types:
 
