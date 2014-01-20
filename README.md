@@ -94,7 +94,7 @@ The default error-handling function used by `validate` and `displayServerErrors`
 1. Adds a "has-error" class to the parent of the input (assumed to be a "form-group" or similar container for the input and its associated elements)
 2. Sets the text of the first label in the form-group to the error message
 
-This is designed to work seamlessly with Twitter Bootstrap's [Form Validation States](http://getbootstrap.com/css/#forms-control-states). If you would like to use a custom error-handling function, it is very easy to do so. Let's say that instead of using the default error-handler, we would like to add the "has-error" class to the input element itself, and make the error message appear in the input's placeholder. Let's define a function that does this:
+This is designed to work seamlessly with Twitter Bootstrap's [Form Validation States](http://getbootstrap.com/css/#forms-control-states). If you would like to use a custom error-handling function instead, it is very easy to do so. Let's say that instead of using the default error-handler, we would like to add the "has-error" class to the input element itself, and make the error message appear in the input's placeholder. Let's define a function that does this:
 
 ```javascript
 function customSetError (element, message) {
