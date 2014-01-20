@@ -18,7 +18,7 @@ Simply add a `data-validation` attribute to each input field you would like vali
 
 ```html
 <form id="loginForm">
-  <input type="email" name="email" data-validation="{'required': 'Please enter your email', 'isEmail': 'Please enter a valid email address'}" />
+  <input type="email" name="email" data-validation="{'required': 'Please enter your email', 'email': 'Please enter a valid email address'}" />
   <input type="password" name="password" data-validation="{'required': 'Please enter a password'}" />
   <input type="button" value="Submit" onclick="login()" />
 </form>
@@ -36,23 +36,23 @@ function login () {
 }
 ```
 
-Validity currently supports the following validation types:
+Validity currently supports the following client-side validation types:
 
 - **required** - ensure the field is not empty
-- **isEmail** - ensure the field contains a valid email address
-- **isURL** - ensure the field contains a valid URL
-- **isIP** - ensure the field contains a valid IP address
-- **isAlpha** - ensure the field contains only letters (a-zA-Z)
-- **isNumeric** - ensure the field contains only numbers
-- **isAlphanumeric** - ensure the field contains only letters and numbers
-- **isHexadecimal** - ensure the field contains a hexadecimal number
-- **isHexColor** - ensure the field contains a hexadecimal color
-- **isLowercase** - ensure the field does not contain any uppercase letters
-- **isUppercase** - ensure the field does not contain any lowercase letters
-- **isInt** - ensure the field contains an integer
-- **isFloat** - ensure the field contains a float
-- **isDate** - ensure the field contains a date
-- **isCreditCard** - ensure the field contains a credit card number
+- **email** - ensure the field contains a valid email address
+- **URL** - ensure the field contains a valid URL
+- **IP** - ensure the field contains a valid IP address
+- **alpha** - ensure the field contains only letters (a-zA-Z)
+- **numeric** - ensure the field contains only numbers
+- **alphanumeric** - ensure the field contains only letters and numbers
+- **hexadecimal** - ensure the field contains a hexadecimal number
+- **hexColor** - ensure the field contains a hexadecimal color
+- **lowercase** - ensure the field does not contain any uppercase letters
+- **uppercase** - ensure the field does not contain any lowercase letters
+- **int** - ensure the field contains an integer
+- **float** - ensure the field contains a float
+- **date** - ensure the field contains a date
+- **creditCard** - ensure the field contains a credit card number
 
 #### Validity helps display errors reported by ther server too
 

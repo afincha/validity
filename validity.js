@@ -83,46 +83,46 @@ Validity.processValidation = function (type, element) {
     case 'required':
       isValid = (element.value.length > 0);
       break;
-    case 'isEmail':
+    case 'email':
       isValid = validator.isEmail(element.value);
       break;
-    case 'isURL':
+    case 'URL':
       isValid = validator.isURL(element.value);
       break;
-    case 'isIP':
+    case 'IP':
       isValid = validator.isIP(element.value);
       break;
-    case 'isAlpha':
+    case 'alpha':
       isValid = validator.isAlpha(element.value);
       break;
-    case 'isNumeric':
+    case 'numeric':
       isValid = validator.isNumeric(element.value);
       break;
-    case 'isAlphanumeric':
+    case 'alphanumeric':
       isValid = validator.isAlphanumeric(element.value);
       break;
-    case 'isHexadecimal':
+    case 'hexadecimal':
       isValid = validator.isHexadecimal(element.value);
       break;
-    case 'isHexColor':
+    case 'hexColor':
       isValid = validator.isHexColor(element.value);
       break;
-    case 'isLowercase':
+    case 'lowercase':
       isValid = validator.isLowercase(element.value);
       break;
-    case 'isUppercase':
+    case 'uppercase':
       isValid = validator.isUppercase(element.value);
       break;
-    case 'isInt':
+    case 'int':
       isValid = validator.isInt(element.value);
       break;
-    case 'isFloat':
+    case 'float':
       isValid = validator.isFloat(element.value);
       break;
-    case 'isDate':
+    case 'date':
       isValid = validator.isDate(element.value);
       break;
-    case 'isCreditCard':
+    case 'creditCard':
       isValid = validator.isCreditCard(element.value);
       break;
     default:
