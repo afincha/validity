@@ -4,16 +4,15 @@ Validity
 Effortless JavaScript form validation and error handling
 
 ### Requirements
-1. This library depends on [chriso](https://github.com/chriso)'s [validator.js](https://github.com/chriso/validator.js). Big shout-out to chriso for writing this awesome library!
+1. This library is built on top of [chriso](https://github.com/chriso)'s [validator.js](https://github.com/chriso/validator.js). Big shout-out to chriso for writing this awesome library!
 1. This library only works for forms that are submitted using JavaScript.
 
 ### Basic Usage
 
-Include **validator** and then **validity** in your HTML:
+Include **validitor** and **validity** in your HTML using the combined, compiled version:
 
 ```html
-<script type="text/javascript" src="validator.min.js"></script>
-<script type="text/javascript" src="validity.min.js"></script>
+<script type="text/javascript" src="validator+validity.min.js"></script>
 ```
 
 #### Client-Side Validation
