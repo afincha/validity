@@ -112,17 +112,17 @@ function customClearError (element) {
 }
 ```
 
-Now we can use these by passing them into `validateWithCustomFunctions` and `displayServerErrorsWithCustomFunctions`:
+Now we can use these by passing them into `validate` and `displayServerErrors`:
 
 ```javascript
 function login () {
-  if (Validity.validateWithCustomFunctions('loginForm', customSetError, customClearError)) {
+  if (Validity.validate('loginForm', customSetError, customClearError)) {
     $.post('/login', $('#loginForm').serialize()).then(function (response) {
       if (response.success) {
          // Login successful. Redirect to a new page
       } else {
         // Login failed
-        Validity.displayServerErrorsWithCustomFunctions(
+        Validity.displayServerErrors(
           'loginForm', 
           [response.error.code.toString()], 
           customSetError, 

@@ -21,17 +21,26 @@
 
 var Validity = { version: '0.1.0' };
 
-Validity.validate = function (formId) {
-  return Validity.validateWithCustomFunctions(formId, Validity.setErrorState, Validity.clearErrorState);
-}
+/*
+ * Performs a client-side validation of the form with id 'formId' using these steps:
+ * 1. Reset any existing error states on the form using 'clearErrorFunction' on each one
+ * 2. Iterate through each input in the form
+ * 3. Checks which client-side validations it needs
+ * 4. Runs each validation
+ * 5. Set error states for ones that fail using 'setErrorFunction'
+ *
+ * Returns true if all validations in the form pass and false if any fail
+ */
+Validity.validate = function (formId, setErrorFunction, clearErrorFunction) {
+  setErrorFunction = (typeof setErrorFunction === "undefined") ? Validity.setErrorState : setErrorFunction;
+  clearErrorFunction = (typeof clearErrorFunction === "undefined") ? Validity.clearErrorState : clearErrorFunction;
 
-Validity.validateWithCustomFunctions = function (formId, setErrorFunction, clearErrorFunction) {
   var isValid = true;
   var form = document.getElementById(formId);
   var inputs = form.getElementsByTagName('input');
   var elements = Array.prototype.slice.call(inputs);
 
-  Validity.clearErrorStatesWithClearFunction(formId, clearErrorFunction);
+  Validity.clearErrorStates(formId, clearErrorFunction);
 
   elements.forEach(function (element) {
     var validations = element.getAttribute('data-validate');
@@ -47,19 +56,25 @@ Validity.validateWithCustomFunctions = function (formId, setErrorFunction, clear
   });
 
   return isValid;
-}
+};
 
-Validity.displayServerErrors = function (formId, codes) {
-  Validity.displayServerErrorsWithCustomFunctions(formId, codes, Validity.setErrorState, Validity.clearErrorState);
-}
 
-Validity.displayServerErrorsWithCustomFunctions = function (formId, codes, setErrorFunction, clearErrorFunction) {
-
-  Validity.clearErrorStatesWithClearFunction(formId, clearErrorFunction);
+/*
+ * Sets error states on the form with id 'formId' using these steps:
+ * 1. Reset any existing error states on the form using 'clearErrorFunction' on each one
+ * 2. Iterate through each input in the form
+ * 3. Checks which server-returned error codes the input should respond to
+ * 4. Set error states (using using 'setErrorFunction') for ones that have codes matching any in the codes array
+ */
+Validity.displayServerErrors = function (formId, codes, setErrorFunction, clearErrorFunction) {
+  setErrorFunction = (typeof setErrorFunction === "undefined") ? Validity.setErrorState : setErrorFunction;
+  clearErrorFunction = (typeof clearErrorFunction === "undefined") ? Validity.clearErrorState : clearErrorFunction;
 
   var form = document.getElementById(formId);
   var inputs = form.getElementsByTagName('input');
   var elements = Array.prototype.slice.call(inputs);
+
+  Validity.clearErrorStates(formId, clearErrorFunction);
 
   elements.forEach(function (element) {
     var errors = element.getAttribute('data-error');
@@ -71,12 +86,14 @@ Validity.displayServerErrorsWithCustomFunctions = function (formId, codes, setEr
       }
     }
   });
-}
+};
 
 
+/*
+ * Returns true if the input 'element' is valid when the validation of type 'type' is applied to it
+ * Returns false if the validation fails, or if the validation type is not recognized
+ */
 Validity.processValidation = function (type, element) {
-  console.log("Processing validation");
-
   var isValid = true;
 
   switch (type) {
@@ -132,9 +149,38 @@ Validity.processValidation = function (type, element) {
   }
 
   return isValid;
-}
+};
 
 
+/*
+ * Clears all error states off the form with id 'formId' by applying the function 'clearErrorFunction'
+ * to each input
+ */
+Validity.clearErrorStates = function (formId, clearErrorFunction) {
+  clearErrorFunction = (typeof clearErrorFunction === "undefined") ? Validity.clearErrorState : clearErrorFunction;
+
+  var form = document.getElementById(formId);
+  var inputs = form.getElementsByTagName('input');
+  var elements = Array.prototype.slice.call(inputs);
+
+  elements.forEach(function (element) {
+    clearErrorFunction(element);
+  });
+};
+
+
+/////////////////////////////////////////////////////////////////
+//   Default functions for setting and clearing error states   //
+/////////////////////////////////////////////////////////////////
+
+
+/*
+ * Visually indicates there is an error on the input 'element' by performing the following steps:
+ * 1. Add the class "has-error" to the parent of the element, which is assumed to be container for
+ *    the input in this case
+ * 2. Change the text for the input's label to the error message, or creates and appeands the label 
+ *    if it does not exist
+ */
 Validity.setErrorState = function (element, message) {
   console.error("Error on element: " + element + " with message: " + message);
 
@@ -153,20 +199,11 @@ Validity.setErrorState = function (element, message) {
   }
 };
 
-Validity.clearErrorStates = function (formId) {
-  Validity.clearErrorStatesWithClearFunction(formId, Validity.clearErrorState);
-}
 
-Validity.clearErrorStatesWithClearFunction = function (formId, clearFunction) {
-  var form = document.getElementById(formId);
-  var inputs = form.getElementsByTagName('input');
-  var elements = Array.prototype.slice.call(inputs);
-
-  elements.forEach(function (element) {
-    clearFunction(element);
-  });
-}
-
+/*
+ * Reverses the visual changes that are applied to an input 'element' by the default error handler 
+ * 'setErrorState'
+ */
 Validity.clearErrorState = function (element) {
   var parent = element.parentNode;
   parent.classList.remove('has-error');
@@ -174,4 +211,4 @@ Validity.clearErrorState = function (element) {
   if (parent.firstChild.tagName == "LABEL") {
     parent.removeChild(parent.firstChild);
   }
-}
+};
