@@ -47,7 +47,7 @@ By default, each error on the form triggers a call to `setErrorState`, which add
 <form id="loginForm">
   <div class="form-group has-error">
     <label for="email">Please enter your email address</label>
-    <input data-validate="{'required': 'Please enter your email', 'email': 'Please enter a valid email address'}" type="email" name="email" id="email" />
+    <input data-validate="{'required': 'Please enter your email address', 'email': 'Please enter a valid email address'}" type="email" name="email" id="email" />
   </div>
   <div class="form-group">
     <label for="password">Password</label>
