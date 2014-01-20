@@ -123,7 +123,12 @@ function login () {
          window.location.href = '/loggedin';
       } else {
         // Login failed
-        Validity.displayServerErrors('loginForm', [response.error.code.toString()], customSetError, customClearError);
+        Validity.displayServerErrorsWithCustomFunctions(
+          'loginForm', 
+          [response.error.code.toString()], 
+          customSetError, 
+          customClearError
+        );
       }
     });
   } else {
