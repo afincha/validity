@@ -5,7 +5,7 @@ Validity enables effortless JavaScript form validation and error handling. It is
 
 ### Basic Usage
 
-Include **validitor** and **validity** in your HTML. The easiest way is with the combined, compiled version that we offer:
+Include **validator** and **validity** in your HTML. The easiest way is with the combined, compiled version that we offer:
 
 ```html
 <script type="text/javascript" src="validator_validity.min.js"></script>
