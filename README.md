@@ -25,7 +25,7 @@ Simply add a `data-validation` attribute to each input field you would like vali
     <label for="password">Password</label>
     <input data-validation="{'required': 'Please enter a password'}" type="password" name="password" id="password" />
   </div>
-  <input type="button" value="Submit" onclick="login()" />
+  <input type="button" value="Log In" onclick="login()" />
 </form>
 ```
 
@@ -53,7 +53,7 @@ By default, each error on the form triggers a call to `setErrorState`, which add
     <label for="password">Password</label>
     <input data-validation="{'required': 'Please enter a password'}" type="password" name="password" id="password" />
   </div>
-  <input type="button" value="Submit" onclick="login()" />
+  <input type="button" value="Log In" onclick="login()" />
 </form>
 ```
 
@@ -91,7 +91,7 @@ Add a `data-error` attribute to each input field you would like server-side erro
     <label for="password">Password</label>
     <input data-validation="{'required': 'Please enter a password'}" type="password" name="password" id="password" />
   </div>
-  <input type="button" value="Submit" onclick="login()" />
+  <input type="button" value="Log In" onclick="login()" />
 </form>
 ```
 
