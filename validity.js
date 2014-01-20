@@ -21,6 +21,10 @@
 
 var Validity = { version: '0.1.0' };
 
+/////////////////////////////////////////////////////////////////
+//   Core functions for Validity                               //
+/////////////////////////////////////////////////////////////////
+
 /*
  * Performs a client-side validation of the form with id 'formId' using these steps:
  * 1. Reset any existing error states on the form using 'clearErrorFunction' on each one

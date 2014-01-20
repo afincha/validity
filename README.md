@@ -3,6 +3,10 @@ Validity
 
 Effortless JavaScript form validation and error handling
 
+### Requirements
+1. This library depends on [chriso](https://github.com/chriso)'s [validator.js](https://github.com/chriso/validator.js). Big shout-out to chriso for writing this awesome library!
+1. This library only works for forms that will be submitted using JavaScript.
+
 ### Basic Usage
 
 Include the required scripts in your HTML
@@ -36,7 +40,7 @@ function login () {
 }
 ```
 
-By default, each error on the form triggers a call to `setErrorState`, which adds the class "has-error" to the parent of the field and changes its label text to the error message. This function is desctibed in more detail in [Using Custom Error-handling Functions]
+By default, each error on the form triggers a call to `setErrorState`, which adds the class "has-error" to the parent of the field and changes its label text to the error message. This function is desctibed in more detail below, under "Using Custom Error-handling Functions"
 
 Validity currently supports the following client-side validation types:
 
@@ -68,7 +72,7 @@ Add a `data-error` attribute to each input field you would like server-side erro
 </form>
 ```
 
-When you receive a response from your server, simply call Validity's `displayServerErrors` function, passing in the id of the form you would like to target, along with an array containing all error codes or names returned by the server.
+When you receive a response from your server, simply call Validity's `displayServerErrors` function, passing in the id of the form you would like to target, along with an array containing all error codes or names returned by the server. This feature will only work for forms submitted using AJAX, where the response can be processsed using JavaScript.
 
 ```javascript
 function login () {
@@ -135,6 +139,11 @@ function login () {
   }
 }
 ```
+
+### Gotchas
+
+Right now, only form members of tag type `<input>` can be validated. 
+I plan to add support for other tags, such as `<select>` soon.
 
 ### Tests
 
