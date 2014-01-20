@@ -62,7 +62,7 @@ Add a `data-error` attribute to each input field you would like server-side erro
 
 ```html
 <form id="loginForm">
-  <input type="email" name="email" data-error="{'101': 'Invalid username or password'}" data-validation="{'required': 'Please enter your email', 'isEmail': 'Please enter a valid email address'}" />
+  <input type="email" name="email" data-error="{'101': 'Invalid email or password'}" data-validation="{'required': 'Please enter your email', 'isEmail': 'Please enter a valid email address'}" />
   <input type="password" name="password" data-validation="{'required': 'Please enter a password'}" />
   <input type="button" value="Submit" onclick="login()" />
 </form>
