@@ -68,15 +68,14 @@ Add a `data-error` attribute to each input field you would like server-side erro
 </form>
 ```
 
-When you receive response from your server, simply call Validity's `displayServerErrors` function, passing in the id of the form you would like to target, along with an array containing the error codes returned by the server.
+When you receive a response from your server, simply call Validity's `displayServerErrors` function, passing in the id of the form you would like to target, along with an array containing the error codes returned by the server.
 
 ```javascript
 function login () {
   if (Validity.validate('loginForm')) {
     $.post('/login', $('#loginForm').serialize()).then(function (response) {
       if (response.success) {
-         // We successfully logged in
-         window.location.href = '/loggedin';
+         // Login successful. Redirect to a new page
       } else {
         // Login failed
         Validity.displayServerErrors('loginForm', [response.error.code.toString()]);
