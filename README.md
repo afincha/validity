@@ -89,7 +89,7 @@ function login () {
 
 ### Using Custom Error-handling Functions
 
-The default error-handling function used by `validate` and `displayServerErrors` is called ` two things:
+The default error-handling function used by `validate` and `displayServerErrors` is called `setErrorState` and does two things:
 
 1. Adds a "has-error" class to the parent of the input (assumed to be a "form-group" or similar container for the input and its associated elements)
 2. Sets the text of the first label in the form-group to the error message
