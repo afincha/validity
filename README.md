@@ -56,7 +56,7 @@ Validity currently supports the following client-side validation types:
 - **date** - ensure the field contains a date
 - **creditCard** - ensure the field contains a credit card number
 
-#### Validity helps display errors reported by your server too
+#### Validity helps display errors returned by your server too
 
 Add a `data-error` attribute to each input field you would like server-side errors to be shown on. Set each attribute to a JSON-string dictionary, with each key being the error returned by the server and the value being the error message you would like to appear on that input if the server returns that error:
 
