@@ -13,17 +13,17 @@ Include **validator** and **validity** in your HTML. The easiest way is with the
 
 #### Client-Side Validation
 
-Simply add a `data-validation` attribute to each input field you would like validated. Set each attribute to a JSON-string dictionary, with each key being the validation type you would like performed on the input and the value being the error message you would like to appear on that input if its corresponding validation fails:
+Simply add a `data-validate` attribute to each input field you would like validated. Set each attribute to a JSON-string dictionary, with each key being the validation type you would like performed on the input and the value being the error message you would like to appear on that input if its corresponding validation fails:
 
 ```html
 <form id="loginForm">
   <div class="form-group">
     <label for="email">Email Address</label>
-    <input data-validation="{'required': 'Please enter your email address', 'email': 'Please enter a valid email address'}" type="email" name="email" id="email" />
+    <input data-validate="{'required': 'Please enter your email address', 'email': 'Please enter a valid email address'}" type="email" name="email" id="email" />
   </div>
   <div class="form-group">
     <label for="password">Password</label>
-    <input data-validation="{'required': 'Please enter a password'}" type="password" name="password" id="password" />
+    <input data-validate="{'required': 'Please enter a password'}" type="password" name="password" id="password" />
   </div>
   <input type="button" value="Log In" onclick="login()" />
 </form>
@@ -47,11 +47,11 @@ By default, each error on the form triggers a call to `setErrorState`, which add
 <form id="loginForm">
   <div class="form-group has-error">
     <label for="email">Please enter your email address</label>
-    <input data-validation="{'required': 'Please enter your email', 'email': 'Please enter a valid email address'}" type="email" name="email" id="email" />
+    <input data-validate="{'required': 'Please enter your email', 'email': 'Please enter a valid email address'}" type="email" name="email" id="email" />
   </div>
   <div class="form-group">
     <label for="password">Password</label>
-    <input data-validation="{'required': 'Please enter a password'}" type="password" name="password" id="password" />
+    <input data-validate="{'required': 'Please enter a password'}" type="password" name="password" id="password" />
   </div>
   <input type="button" value="Log In" onclick="login()" />
 </form>
@@ -85,11 +85,11 @@ Add a `data-error` attribute to each input field you would like server-side erro
 <form id="loginForm">
   <div class="form-group">
     <label for="email">Email Address</label>
-    <input data-error="{'101': 'Invalid email or password'}" data-validation="{'required': 'Please enter your email address', 'email': 'Please enter a valid email address'}" type="email" name="email" id="email" />
+    <input data-error="{'101': 'Invalid email or password'}" data-validate="{'required': 'Please enter your email address', 'email': 'Please enter a valid email address'}" type="email" name="email" id="email" />
   </div>
   <div class="form-group">
     <label for="password">Password</label>
-    <input data-validation="{'required': 'Please enter a password'}" type="password" name="password" id="password" />
+    <input data-validate="{'required': 'Please enter a password'}" type="password" name="password" id="password" />
   </div>
   <input type="button" value="Log In" onclick="login()" />
 </form>
