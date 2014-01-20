@@ -5,7 +5,7 @@ Effortless JavaScript form validation and error handling
 
 ### Requirements
 1. This library depends on [chriso](https://github.com/chriso)'s [validator.js](https://github.com/chriso/validator.js). Big shout-out to chriso for writing this awesome library!
-1. This library only works for forms that will be submitted using JavaScript.
+1. This library only works for forms that are submitted using JavaScript.
 
 ### Basic Usage
 
