@@ -9,7 +9,7 @@ Effortless JavaScript form validation and error handling
 
 ### Basic Usage
 
-Include the required scripts in your HTML
+Include `validator` and then `validity` in your HTML:
 
 ```html
 <script type="text/javascript" src="validator.min.js"></script>
