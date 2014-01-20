@@ -12,7 +12,7 @@ Effortless JavaScript form validation and error handling
 Include **validitor** and **validity** in your HTML using the combined, compiled version:
 
 ```html
-<script type="text/javascript" src="validator+validity.min.js"></script>
+<script type="text/javascript" src="validator_validity.min.js"></script>
 ```
 
 #### Client-Side Validation
