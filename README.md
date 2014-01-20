@@ -1,7 +1,7 @@
 Validity
 ========
 
-Effortless JavaScript form validation and error handling
+Effortless JavaScript form validation and error handling.
 
 ### Requirements
 1. This library is built on top of [chriso](https://github.com/chriso)'s [validator.js](https://github.com/chriso/validator.js). Big shout-out to chriso for writing this awesome library!
