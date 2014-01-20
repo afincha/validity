@@ -103,7 +103,7 @@ function customSetError (element, message) {
 }
 ```
 
-Let's define a function that will clear this error state as well:
+Let's define a function that will clear this error state as well, if the user corrects the error:
 
 ```javascript
 function customClearError (element) {
