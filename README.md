@@ -36,6 +36,8 @@ function login () {
 }
 ```
 
+By default, each error on the form triggers a call to `setErrorState`, which adds the CSS class "has-error" to the parent of the field and changes its label text to the error message. This function is desctibed in more detail in [Using Custom Error-handling Functions]
+
 Validity currently supports the following client-side validation types:
 
 - **required** - ensure the field is not empty
@@ -54,7 +56,7 @@ Validity currently supports the following client-side validation types:
 - **date** - ensure the field contains a date
 - **creditCard** - ensure the field contains a credit card number
 
-#### Validity helps display errors reported by ther server too
+#### Validity helps display errors reported by your server too
 
 Add a `data-error` attribute to each input field you would like server-side errors to be shown on. Set each attribute to a JSON-string dictionary, with each key being the error returned by the server and the value being the error message you would like to appear on that input if the server returns that error:
 
@@ -93,7 +95,7 @@ The default error-handling function used by `validate` and `displayServerErrors`
 1. Adds a "has-error" class to the parent of the input (assumed to be a "form-group" or similar container for the input and its associated elements)
 2. Sets the text of the first label in the form-group to the error message
 
-This is designed to work seamlessly with forms built using Twitter Bootstrap. If you would like to use a custom error-handling function, it is very easy to do so. Let's say that instead of using the default error-handler, we would like to add the "has-error" class to the input element itself, and make the error message appear in the input's placeholder. Let's define a function that does this:
+This is designed to work seamlessly with Twitter Bootstrap's [Form Validation States](http://getbootstrap.com/css/#forms-control-states). If you would like to use a custom error-handling function, it is very easy to do so. Let's say that instead of using the default error-handler, we would like to add the "has-error" class to the input element itself, and make the error message appear in the input's placeholder. Let's define a function that does this:
 
 ```javascript
 function customSetError (element, message) {
