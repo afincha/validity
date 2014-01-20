@@ -17,8 +17,14 @@ Simply add a `data-validation` attribute to each input field you would like vali
 
 ```html
 <form id="loginForm">
-  <input type="email" name="email" data-validation="{'required': 'Please enter your email', 'email': 'Please enter a valid email address'}" />
-  <input type="password" name="password" data-validation="{'required': 'Please enter a password'}" />
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input data-validation="{'required': 'Please enter your email address', 'email': 'Please enter a valid email address'}" type="email" name="email" id="email" />
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input data-validation="{'required': 'Please enter a password'}" type="password" name="password" id="password" />
+  </div>
   <input type="button" value="Submit" onclick="login()" />
 </form>
 ```
@@ -35,7 +41,23 @@ function login () {
 }
 ```
 
-By default, each error on the form triggers a call to `setErrorState`, which adds the class "has-error" to the parent of the field and changes its label text to the error message. This function is desctibed in more detail below, under [Using Custom Error-handling Functions](https://github.com/afincha/validity#using-custom-error-handling-functions).
+By default, each error on the form triggers a call to `setErrorState`, which adds the class "has-error" to the parent of the field and changes its label text to the error message. If, for example, the 'required' validation failed on the 'email' field in our loginForm above, the markup of the form would be changed to this:
+
+```html
+<form id="loginForm">
+  <div class="form-group has-error">
+    <label for="email">Please enter your email address</label>
+    <input data-validation="{'required': 'Please enter your email', 'email': 'Please enter a valid email address'}" type="email" name="email" id="email" />
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input data-validation="{'required': 'Please enter a password'}" type="password" name="password" id="password" />
+  </div>
+  <input type="button" value="Submit" onclick="login()" />
+</form>
+```
+
+The `setErrorState` function, as well as how to use your own error-handling functions, is described in more detail below, under [Using Custom Error-handling Functions](https://github.com/afincha/validity#using-custom-error-handling-functions).
 
 Validity currently supports the following client-side validation types:
 
@@ -61,8 +83,14 @@ Add a `data-error` attribute to each input field you would like server-side erro
 
 ```html
 <form id="loginForm">
-  <input type="email" name="email" data-error="{'101': 'Invalid email or password'}" data-validation="{'required': 'Please enter your email', 'email': 'Please enter a valid email address'}" />
-  <input type="password" name="password" data-validation="{'required': 'Please enter a password'}" />
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input data-error="{'101': 'Invalid email or password'}" data-validation="{'required': 'Please enter your email address', 'email': 'Please enter a valid email address'}" type="email" name="email" id="email" />
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input data-validation="{'required': 'Please enter a password'}" type="password" name="password" id="password" />
+  </div>
   <input type="button" value="Submit" onclick="login()" />
 </form>
 ```
@@ -135,7 +163,7 @@ function login () {
 }
 ```
 
-### Gotchas
+### Limitations
 
 * Right now, only form members of tag type `<input>` can be validated. 
 I plan to add support for other tags, such as `<select>` soon.
