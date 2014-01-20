@@ -1,11 +1,9 @@
 Validity
 ========
 
-Effortless JavaScript form validation and error handling.
+Validity enables effortless JavaScript form validation and error handling. It is built on top of [chriso](https://github.com/chriso)'s [validator.js](https://github.com/chriso/validator.js). Big shout-out to chriso for writing this awesome library!
 
-### Requirements
-1. This library is built on top of [chriso](https://github.com/chriso)'s [validator.js](https://github.com/chriso/validator.js). Big shout-out to chriso for writing this awesome library!
-1. This library only works for forms that are submitted using JavaScript.
+**Note:** This library only works for forms that are submitted using JavaScript.
 
 ### Basic Usage
 
@@ -39,7 +37,7 @@ function login () {
 }
 ```
 
-By default, each error on the form triggers a call to `setErrorState`, which adds the class "has-error" to the parent of the field and changes its label text to the error message. This function is desctibed in more detail below, under "Using Custom Error-handling Functions".
+By default, each error on the form triggers a call to `setErrorState`, which adds the class "has-error" to the parent of the field and changes its label text to the error message. This function is desctibed in more detail below, under [Using Custom Error-handling Functions](https://github.com/afincha/validity#using-custom-error-handling-functions).
 
 Validity currently supports the following client-side validation types:
 
