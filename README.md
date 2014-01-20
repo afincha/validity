@@ -158,7 +158,7 @@ function login () {
       }
     });
   } else {
-    console.error("There are errors on the form");
+    console.error("Errors on the form");
   }
 }
 ```
