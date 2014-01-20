@@ -119,8 +119,7 @@ function login () {
   if (Validity.validateWithCustomFunctions('loginForm', customSetError, customClearError)) {
     $.post('/login', $('#loginForm').serialize()).then(function (response) {
       if (response.success) {
-         // We successfully logged in
-         window.location.href = '/loggedin';
+         // Login successful. Redirect to a new page
       } else {
         // Login failed
         Validity.displayServerErrorsWithCustomFunctions(
