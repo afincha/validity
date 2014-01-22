@@ -168,6 +168,7 @@ function login () {
 * Right now, only form members of tag type `<input>` can be validated. 
 I plan to add support for other tags, such as `<select>` soon.
 * This library only works for forms that are submitted using JavaScript.
+* The default error handlers use DOMelement.classList, which is not supported in versions of IE older than 10.
 
 ### Tests
 
