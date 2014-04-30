@@ -107,7 +107,7 @@ Validity.processValidation = function (type, element) {
     case 'email':
       isValid = validator.isEmail(element.value);
       break;
-    case 'URL' || 'url':
+    case 'URL':
       isValid = validator.isURL(element.value);
       break;
     case 'IP':

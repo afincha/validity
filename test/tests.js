@@ -36,5 +36,5 @@ test( "Test \'email\'", function() {
   strictEqual(Validity.processValidation('email', element.email), false, "validated")
 });
 test( "Test \'url\'", function() {
-  strictEqual(Validity.processValidation('url', element.url), false, "validated")
+  strictEqual(Validity.processValidation('URL', element.url), false, "validated")
 });
