@@ -25,7 +25,7 @@ module( "processValidation-Test Failure", {
     element = {
       required: {value: {length: '0'}},
       email: {value: 'xyzwe.com'},
-	  url: {value: 'xyz@github.com'}
+	  url: {value: 'wwwgithubcom'}
     };
   }
 });
