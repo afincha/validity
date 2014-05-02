@@ -172,7 +172,7 @@ I plan to add support for other tags, such as `<select>` soon.
 
 ### Tests
 
-I don't have a test suite yet. Help me make one!
+Thank you [poleveD](https://github.com/poleveD) for setting up a basic QUnit testing suite! Please help me add more tests.
 
 ### License (MIT)
 
