@@ -174,6 +174,12 @@ I plan to add support for other tags, such as `<select>` soon.
 
 Thank you [poleveD](https://github.com/poleveD) for setting up a basic QUnit testing suite! Please help me add more tests.
 
+### Features I plan to add
+
+* Support for server-side error messages that come from the server
+* Option to define validation rules in a JS object instead of in the HTML
+* Support for a 3rd type of attribute on an input that adds an auto-formatter (i.e. for a phone number)
+
 ### License (MIT)
 
 Copyright (c) 2014 Andrew Finch
