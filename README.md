@@ -179,6 +179,7 @@ Thank you [poleveD](https://github.com/poleveD) for setting up a basic QUnit tes
 * Support for server-side error messages that come from the server
 * Option to define validation rules in a JS object instead of in the HTML
 * Support for a 3rd type of attribute on an input that adds an auto-formatter (i.e. for a phone number)
+* A live form feedback widget that moves with the current field and displays a progress bar
 
 ### License (MIT)
 
